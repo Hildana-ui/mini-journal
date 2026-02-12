@@ -10,8 +10,6 @@ A simple React + Firebase app to create, view, and edit notes with user authenti
 - Edit existing notes
 - Notes are stored in Firebase Firestore and tied to a specific user
 
-## Demo
-[LIVE DEMO](https://hildana-ui.github.io/mini-journal/)
 
 ## Tech Stack
 
