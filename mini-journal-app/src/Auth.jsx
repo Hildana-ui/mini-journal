@@ -19,11 +19,13 @@ function Auth() {
 
     return (
         <div>
-            <h2>Auth</h2>
-            <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-            <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
-            <button onClick={signup}>Signup</button>
-            <button onClick={login}>Login</button>
+            <h1>Welcome!</h1>
+            <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} /><br/>
+            <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} /><br/>
+            <div id="buttons">
+                <button onClick={signup}>Signup</button>
+                <button onClick={login}>Login</button>
+            </div>
         </div>
     );
 }

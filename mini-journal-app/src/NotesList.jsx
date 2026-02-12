@@ -1,10 +1,9 @@
 import { signOut } from "firebase/auth";
-import { auth } from "./firebase";
 import { useEffect, useState } from "react";
 import { db, auth } from "./firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-function NotesList() {
+function NotesList({ goToEditor, editNote }) {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
@@ -22,6 +21,11 @@ function NotesList() {
             }));
 
             setNotes(notesArray);
+
+
+            if (notesArray.length === 0) {
+                goToEditor();
+            }
         };
 
         fetchNotes();
@@ -33,13 +37,25 @@ function NotesList() {
 
     return (
         <div>
-            <button onClick={logout}>Logout</button>
-            <h2>Your Notes</h2>
-            {notes.map(note => (
-                <div key={note.id}>
-                    <p>{note.content}</p>
+            <div id="nav">
+                <h1>Your Notes</h1>
+                <div id="buttons">
+                <button onClick={goToEditor}>New Note</button>
+                <button onClick={logout}>Logout</button>
                 </div>
-            ))}
+            </div>
+            <table>
+                <tbody>
+                    {notes.map(note => (
+                    <tr id="notes" key={note.id}>
+                        <td>{note.content}</td>
+                        <td>
+                        <button id="edit-btn" onClick={() => editNote(note)}>Edit</button>
+                        </td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>  
     );
 }
