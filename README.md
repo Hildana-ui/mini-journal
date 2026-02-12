@@ -11,7 +11,7 @@ A simple React + Firebase app to create, view, and edit notes with user authenti
 - Notes are stored in Firebase Firestore and tied to a specific user
 
 ## Demo
-[LIVE DEMO]()
+[LIVE DEMO](https://hildana-ui.github.io/mini-journal/)
 
 ## Tech Stack
 
@@ -31,12 +31,14 @@ cd mini-journal-app
 ```
 
 **2. Install dependencies**
+```bash
 npm install
+```
 
 **3. Firebase Setup**
 
-Go to Firebase Console
-.
+Go to Firebase Console.
+
 Create a new project.
 
 Enable Email/Password Authentication.
@@ -44,8 +46,9 @@ Enable Email/Password Authentication.
 Create a Firestore database.
 
 **4. Run the app**
+```bash
 npm run dev
-
+```
 
 Open your browser at http://localhost:5173 (or the link provided by Vite).
 
@@ -56,7 +59,3 @@ Signup / Login and start creating notes.
 - Add delete functionality
 - Add note timestamps in the list
 
-
-Add a Web App in Firebase and copy the config.
-
-Replace the Firebase config in src/firebase.js:
